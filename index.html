@@ -44,13 +44,44 @@
     frame.src = stream1;
 
     btn1.addEventListener("click", () => {
+      frame.removeAttribute("sandbox");
       frame.src = stream1;
+      setTimeout(() => {
+        frame.setAttribute(
+          "sandbox",
+          "allow-forms allow-pointer-lock allow-same-origin allow-top-navigation"
+        );
+      }, 3000);
     });
     btn2.addEventListener("click", () => {
+      frame.removeAttribute("sandbox");
       frame.src = stream2;
+      setTimeout(() => {
+        frame.setAttribute(
+          "sandbox",
+          "allow-forms allow-pointer-lock allow-same-origin allow-top-navigation"
+        );
+      }, 3000);
     });
     btn3.addEventListener("click", () => {
+      frame.removeAttribute("sandbox");
       frame.src = stream3;
+      setTimeout(() => {
+        frame.setAttribute(
+          "sandbox",
+          "allow-forms allow-pointer-lock allow-same-origin  allow-top-navigation"
+        );
+      }, 3000);
+    });
+
+    document.addEventListener("readystatechange", (event) => {
+      // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
+      if (event.target.readyState === "complete") {
+        frame.setAttribute(
+          "sandbox",
+          "allow-forms allow-pointer-lock allow-same-origin allow-top-navigation"
+        );
+      }
     });
 
     //   sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
