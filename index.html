@@ -18,20 +18,40 @@
         alt="logo"
         class="logo"
       />
-      <iframe
-        src="http://cdn.crichd.pro/embed.php?id=skysp2&q=Sky%20Sports%20Cricket"
-        class="frame"
-        allowfullscreen="true"
-      ></iframe>
+      <iframe src="" class="frame" allowfullscreen="true" id="myFrame"></iframe>
+      <div class="btn-container">
+        <button id="server1">Server 1</button>
+        <button id="server2">Server 2</button>
+        <button id="server3">Server 3</button>
+      </div>
       <a href="https://www.hashcode.pk" target="_blank">Hashcode</a>
     </div>
   </body>
   <script>
-    // let stream1 =
-    //   "http://cdn.crichd.pro/embed2.php?id=skysp2&q=Sky%20Sports%20Cricket";
-    // let stream2 = "https://daddylive.club/stream2watch/stream-65.php";
-    // let stream3 =
-    //   "https://mixcasthd.com/crichd.php?player=desktop&live=skyscric&vw=640&vh=490";
+    let frame = document.getElementById("myFrame");
+    let btn1 = document.getElementById("server1");
+    let btn2 = document.getElementById("server2");
+    let btn3 = document.getElementById("server3");
+
+    let stream1 =
+      "http://cdn.crichd.pro/embed.php?id=skysp2&q=Sky%20Sports%20Cricket";
+    let stream2 = "https://daddylive.club/stream2watch/stream-65.php";
+    let stream3 =
+      "http://cdn.crichd.pro/embed2.php?id=skysp2&q=Sky%20Sports%20Cricket";
+    let stream4 =
+      "https://mixcasthd.com/crichd.php?player=desktop&live=skyscric&vw=640&vh=490";
+
+    frame.src = stream1;
+
+    btn1.addEventListener("click", () => {
+      frame.src = stream1;
+    });
+    btn2.addEventListener("click", () => {
+      frame.src = stream2;
+    });
+    btn3.addEventListener("click", () => {
+      frame.src = stream3;
+    });
 
     //   sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
   </script>
